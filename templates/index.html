@@ -1,0 +1,138 @@
+<html>
+    <head>
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+        <title>
+            BE PROJECT
+        </title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <script> 
+        </script>
+
+    </head>
+
+    <body style="margin: 0;">
+        <div style="background-color: rgb(0, 206, 171); text-align: center;">
+            <br>
+            <h1 style="color: white; font-family: 'Josefin Sans', sans-serif; ">Custom Photorealistic Human Face Generation</h1>
+            <br>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div>
+            <div style="float: left;">
+                <div class="card" style="width: 18rem; left: 100px; border: 10px outset rgb(0, 206, 171);">
+                    <img src= "{{ url_for('static', filename=image) }}" class="card-img-top"> 
+                </div>
+                <br>
+                <br>
+                <div style="width: 30rem; left: 100px; padding-left: 100px;">
+                <form method="POST" action="">
+                    <div>
+                        <input type="submit" class="btn btn-primary" name="genbutton" value="Generate random image" style="background-color: rgb(0, 206, 171); color: white; font-family: 'Josefin Sans', sans-serif; font-size: x-large;"></input>
+                    </div>
+                
+                </form>
+            </div>
+            </div>
+            <br>
+            <br>
+            <div style="right: 100px; float: right; padding-right: 400px;">
+                <h1>
+                    {{ feature }}
+                    {{ deg }}
+                    {{ count }}
+                </h1>
+                <form method="POST" action="">
+                    
+                   <div>
+                        <select name="feature" id="f" class="btn btn-secondary dropdown-toggle" style="background-color: rgb(0, 206, 171); font-family: 'Josefin Sans', sans-serif; font-size: x-large;">
+                            <option {{ "selected" if feature == "Smiling" else "" }} value="Smiling">Smile</option>
+                            <option {{ "selected" if feature == "Male" else "" }} value="Male">Male</option>
+                            <option {{ "selected" if feature == "EyeGlasses" else "" }} value="Eyeglasses">EyeGlasses</option>
+                            <option {{ "selected" if feature == "StraightHair" else "" }} value="StraightHair">Straight Hair</option>
+                            <option {{ "selected" if feature == "5oClockShadow" else "" }} value="5oClockShadow">5oClock Shadow</option>
+                            <option {{ "selected" if feature == "ArchedEyebrows" else "" }} value="ArchedEyebrows">Arched Eyebrows</option>
+                            <option {{ "selected" if feature == "Attractive" else "" }} value="Attractive">Attractive</option>
+                            <option {{ "selected" if feature == "BagsUnderEyes" else "" }} value="BagsUnderEyes">Bags Under Eyes</option>
+                            <option {{ "selected" if feature == "PointyNose" else "" }} value="PointyNose">Pointy Nose</option>
+                            <option {{ "selected" if feature == "Young" else "" }} value="Young">Young</option>
+                            <option {{ "selected" if feature == "OvalFace" else "" }} value="OvalFace">Oval Face</option>
+                            <option {{ "selected" if feature == "Mustache" else "" }} value="Mustache">Mustache</option>
+                            <option {{ "selected" if feature == "GrayHair" else "" }} value="GrayHair">Gray Hair</option>
+                            <option {{ "selected" if feature == "HighCheekbones" else "" }} value="HighCheekbones">High Cheekbones</option>
+                            <option {{ "selected" if feature == "Blurry" else "" }} value="Blurry">Blurry</option>
+                            <option {{ "selected" if feature == "Goatee" else "" }} value="Goatee">Goatee</option>
+                            <option {{ "selected" if feature == "DoubleChin" else "" }} value="DoubleChin">Double Chin</option>
+                            <option {{ "selected" if feature == "Bangs" else "" }} value="Bangs">Bangs</option>
+                            <option {{ "selected" if feature == "HeavyMakeup" else "" }} value="HeavyMakeup">Heavy Makeup</option>
+                            <option {{ "selected" if feature == "No Beard" else "" }} value="No Beard">No Beard</option>
+                            <option {{ "selected" if feature == "BrownHair" else "" }} value="BrownHair">Brown Hair</option>
+                            <option {{ "selected" if feature == "BushyEyebrows" else "" }} value="BushyEyebrows">Bushy Eyebrows</option>
+                            <option {{ "selected" if feature == "PaleSkin" else "" }} value="PaleSkin">Pale Skin</option>
+                            <option {{ "selected" if feature == "WavyHair" else "" }} value="WavyHair">Wavy Hair</option>
+                            <option {{ "selected" if feature == "BlackHair" else "" }} value="BlackHair">Black Hair</option>
+                            <option {{ "selected" if feature == "EyeGlasses" else "" }} value="EyeGlasses">Eye Glasses</option>
+                            <option {{ "selected" if feature == "WearingNecklace" else "" }} value="WearingNecklace">Wearing Necklace</option>
+                            <option {{ "selected" if feature == "RecedingHairline" else "" }} value="RecedingHairline">Receding Hairline</option>
+                            <option {{ "selected" if feature == "WearingNecktie" else "" }} value="WearingNecktie">Wearing Necktie</option>
+                            <option {{ "selected" if feature == "BigLips" else "" }} value="BigLips">Big Lips</option>
+                            <option {{ "selected" if feature == "WearingLipstick" else "" }} value="WearingLipstick">Wearing Lipstick</option>
+                            <option {{ "selected" if feature == "NarrowEyes" else "" }} value="NarrowEyes">Narrow Eyes</option>
+                            <option {{ "selected" if feature == "MouthSlightlyOpen" else "" }} value="MouthSlightlyOpen">Mouth Slightly Open</option>
+                            <option {{ "selected" if feature == "Chubby" else "" }} value="Chubby">Chubby</option>
+                            <option {{ "selected" if feature == "Sideburn" else "" }} value="Sideburn">Sideburn</option>
+                            <option {{ "selected" if feature == "WearingEarring" else "" }} value="WearingEarring">Wearing Earring</option>
+                            <option {{ "selected" if feature == "BigNose" else "" }} value="BigNose">BigNose</option>
+                            <option {{ "selected" if feature == "Bald" else "" }} value="Bald">Bald</option>
+                            <option {{ "selected" if feature == "Rosy Cheeks" else "" }} value="Rosy Cheeks">Rosy Cheeks</option>
+                            <option {{ "selected" if feature == "BlondHair" else "" }} value="BlondHair">Blond Hair</option>
+                        </select>
+                       
+                        
+                        <input type="radio" id="plus" value = "inc" name="degree" style="opacity: 0;">
+                        <label for="plus">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="rgb(0, 206, 171)" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                            </svg>
+                        </label>
+
+                        <input type="radio" id="minus" value = "dec" name="degree" style="opacity: 0;">
+                        <label for="minus">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="rgb(0, 206, 171)" class="bi bi-dash-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                            <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
+                            </svg>
+                        </label>
+
+                        <input type="radio" value = "def" name="degree" style="visibility: hidden;" checked>
+
+                        <br>
+                        <br>
+
+                        <input type="submit" class="btn btn-primary"  style="background-color: rgb(0, 206, 171); color: white; font-family: 'Josefin Sans', sans-serif; font-size: x-large;">
+                        
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script>
+            document.getElementById('f').onchange = function() {
+              localStorage.setItem('selectedtem', document.getElementById('f').value);
+            };
+      
+            if (localStorage.getItem('selectedtem')) {
+              document.getElementById('f').options[localStorage.getItem('selectedtem')].selected = true;
+            }
+          </script>
+    </body>
+</html>
