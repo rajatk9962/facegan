@@ -26,7 +26,6 @@ class_dict = torch.load("classifierv6.pth", map_location=torch.device(device))["
 classifier.load_state_dict(class_dict)
 classifier.eval()
 
-print("Loaded the models")
 
 opt = torch.optim.Adam(classifier.parameters(), lr=0.01)
 

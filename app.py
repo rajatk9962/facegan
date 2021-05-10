@@ -7,7 +7,7 @@ import os
 app = Flask(__name__)
 
 
-count = 50
+count = 20
 fname=''
 noise=0
 fake_image_history=[]
@@ -35,21 +35,21 @@ def index():
             
             
             if deg == "inc":
-                count+=5
+                count+=1
                 
                 for filename in os.listdir('static/'):
                     if filename.startswith('image_'):  
                         os.remove('static/' + filename)
                 noise,fake_image_history,fname=genimage(count,noise,feature,fake_image_history)
             elif deg == "dec":            
-                count-=5
+                count-=1
                 
                 for filename in os.listdir('static/'):
                     if filename.startswith('image_'):  
                         os.remove('static/' + filename)
                 fake_image_history,fname,noise=histimage(fake_image_history)
             elif deg == "def":
-                count = 50     
+                count = 20     
                 for filename in os.listdir('static/'):
                     if filename.startswith('image_'):  
                         os.remove('static/' + filename)
