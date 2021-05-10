@@ -1,4 +1,4 @@
-gunicorn
+-f https://download.pytorch.org/whl/torch_stable.html
 Flask==1.1.2
 matplotlib==3.4.2
 numpy==1.20.2
@@ -10,7 +10,9 @@ pyzmq==20.0.0
 scikit-learn==0.24.2
 scipy==1.6.3
 sklearn==0.0
-torch==1.8.1+cpu torchvision==0.9.1+cpu torchaudio==0.8.1 -f https://download.pytorch.org/whl/torch_stable.html
+torch==1.8.1+cpu 
+torchvision==0.9.1+cpu 
+torchaudio==0.8.1 
 tqdm==4.60.0
 typing-extensions==3.10.0.0
 webencodings==0.5.1
