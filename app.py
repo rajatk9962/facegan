@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 
 count = 20
-fname=''
+fname='static/default.jpg"'
 noise=0
 fake_image_history=[]
 @app.route('/', methods=['GET', 'POST'])
@@ -54,7 +54,8 @@ def index():
                     if filename.startswith('image_'):  
                         os.remove('static/' + filename)
                 noise,fake_image_history,fname=changefeature(count,feature,noise)
-            
+            if not fname:
+                fname = "static/default.jpg"            
  
             return render_template('index.html', feature = feature, deg = deg, count= count, image=fname)
     return render_template('index.html',image=fname)
