@@ -1,4 +1,3 @@
-cython
 -f https://download.pytorch.org/whl/torch_stable.html
 Flask
 matplotlib
