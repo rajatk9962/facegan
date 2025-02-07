@@ -1,5 +1,5 @@
 -f https://download.pytorch.org/whl/torch_stable.html
-Flask
+Flask>=2.2.0
 matplotlib
 numpy==1.20.2
 pandas==1.2.4
