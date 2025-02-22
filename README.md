@@ -43,17 +43,3 @@ This project uses **Generative Adversarial Networks (GANs)** to generate **photo
 
 
 
-## File Structure
-
-📁 facial-gan
-├── app.py               # Flask web application
-├── main.py              # Core logic for face generation
-├── Layers.py            # Neural network layers (Generator & Classifier)
-├── Subfunctions.py      # Helper functions for noise and scoring
-├── generator50.pth      # Pre-trained GAN model
-├── classifierv6.pth     # Pre-trained classifier
-├── templates/
-│   ├── index.html       # Web UI for the application
-├── static/              # Stores generated images
-├── requirements.txt     # Required Python packages
-└── README.md            # Project documentation
